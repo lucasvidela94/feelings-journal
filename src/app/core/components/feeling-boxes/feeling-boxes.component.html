@@ -1,0 +1,24 @@
+<div
+    class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+>
+    <div class="relative h-40 bg-gradient-to-r from-blue-400 to-indigo-500">
+        <div
+            class="absolute bottom-0 right-0 m-4 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+        >
+            <img
+                [src]="feeling.imageUrl"
+                alt="Emotion icon"
+                class="w-10 h-10"
+            />
+        </div>
+    </div>
+    <div class="p-6">
+        <p class="text-lg font-semibold text-gray-800 mb-2">
+            {{ feeling.date | date: "dd/MM/yyyy" }}
+        </p>
+        <p class="text-sm text-gray-600 mb-3">{{ feeling.description }}</p>
+        <p class="text-sm font-medium text-indigo-600">
+            Sentimiento: {{ feeling.feeling }}
+        </p>
+    </div>
+</div>

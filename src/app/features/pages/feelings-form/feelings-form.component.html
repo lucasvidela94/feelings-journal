@@ -1,0 +1,99 @@
+<div class="p-6 max-w-md mx-auto bg-white border rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">¿En qué estás pensando?</h2>
+    <form class="space-y-4">
+        <input
+            type="text"
+            aria-label="Escribe un pensamiento"
+            placeholder="Escribe tu pensamiento aquí..."
+            class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div class="flex space-x-4">
+            <label class="flex flex-col items-center cursor-pointer">
+                <input
+                    type="radio"
+                    name="emotion"
+                    value="Felicidad"
+                    class="sr-only"
+                />
+                <div
+                    class="relative w-16 h-16 flex items-center justify-center bg-yellow-200 rounded-full border-2 border-transparent group-hover:border-yellow-400 transition"
+                >
+                    <div
+                        class="absolute inset-0 flex items-center justify-center"
+                    >
+                        <input
+                            type="radio"
+                            name="emotion"
+                            value="Felicidad"
+                            class="absolute inset-0 opacity-0 cursor-pointer"
+                        />
+                        <img
+                            src="/src/assets/images/happiness.png"
+                            alt="Felicidad"
+                            class="w-8 h-8"
+                        />
+                    </div>
+                </div>
+                <span class="mt-2 text-gray-700">Felicidad</span>
+            </label>
+            <!-- Tristeza -->
+            <label class="flex flex-col items-center cursor-pointer">
+                <input
+                    type="radio"
+                    name="emotion"
+                    value="Tristeza"
+                    class="sr-only"
+                />
+                <div
+                    class="relative w-16 h-16 flex items-center justify-center bg-blue-200 rounded-full border-2 border-transparent group-hover:border-blue-400 transition"
+                >
+                    <div
+                        class="absolute inset-0 flex items-center justify-center"
+                    >
+                        <input
+                            type="radio"
+                            name="emotion"
+                            value="Tristeza"
+                            class="absolute inset-0 opacity-0 cursor-pointer"
+                        />
+                        <img
+                            src="/src/assets/images/sadness.png"
+                            alt="Tristeza"
+                            class="w-8 h-8"
+                        />
+                    </div>
+                </div>
+                <span class="mt-2 text-gray-700">Tristeza</span>
+            </label>
+            <!-- Ansiedad -->
+            <label class="flex flex-col items-center cursor-pointer">
+                <input
+                    type="radio"
+                    name="emotion"
+                    value="Ansiedad"
+                    class="sr-only"
+                />
+                <div
+                    class="relative w-16 h-16 flex items-center justify-center bg-red-200 rounded-full border-2 border-transparent group-hover:border-red-400 transition"
+                >
+                    <div
+                        class="absolute inset-0 flex items-center justify-center"
+                    >
+                        <input
+                            type="radio"
+                            name="emotion"
+                            value="Ansiedad"
+                            class="absolute inset-0 opacity-0 cursor-pointer"
+                        />
+                        <img
+                            src="/src/assets/images/anxiety.png"
+                            alt="Ansiedad"
+                            class="w-8 h-8"
+                        />
+                    </div>
+                </div>
+                <span class="mt-2 text-gray-700">Ansiedad</span>
+            </label>
+        </div>
+    </form>
+</div>
