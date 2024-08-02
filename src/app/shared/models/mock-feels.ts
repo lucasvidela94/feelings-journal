@@ -6,7 +6,7 @@ export const feelings: Feeling[] = [
     description:
       "Hoy me siento muy feliz porque terminé un proyecto importante.",
     feeling: "Felicidad",
-    imageUrl: "assets/images/happiness.png",
+    imageUrl: "/assets/images/happiness.png",
   },
   {
     date: "2024-08-02",

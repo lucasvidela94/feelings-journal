@@ -1,99 +1,124 @@
-<div class="p-6 max-w-md mx-auto bg-white border rounded-lg shadow-md">
-    <h2 class="text-2xl font-semibold mb-4">¿En qué estás pensando?</h2>
-    <form class="space-y-4">
-        <input
-            type="text"
-            aria-label="Escribe un pensamiento"
-            placeholder="Escribe tu pensamiento aquí..."
-            class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <div class="flex space-x-4">
-            <label class="flex flex-col items-center cursor-pointer">
-                <input
-                    type="radio"
-                    name="emotion"
-                    value="Felicidad"
-                    class="sr-only"
-                />
-                <div
-                    class="relative w-16 h-16 flex items-center justify-center bg-yellow-200 rounded-full border-2 border-transparent group-hover:border-yellow-400 transition"
-                >
+<div class="flex justify-center items-center h-full">
+    <div
+        class="p-6 w-full max-w-md mx-auto bg-white/80 backdrop-blur-sm border rounded-lg shadow-lg"
+    >
+        <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">
+            ¿En qué estás pensando?
+        </h2>
+        <form
+            (ngSubmit)="getSentiment(f, $event)"
+            #f="ngForm"
+            class="space-y-6"
+        >
+            <input
+                type="text"
+                aria-label="Escribe un pensamiento"
+                placeholder="Escribe tu pensamiento aquí..."
+                [(ngModel)]="innerThought"
+                name="thought"
+                class="w-full p-4 border-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-lg"
+            />
+            <div class="flex justify-center space-x-4 sm:space-x-8">
+                <label class="flex flex-col items-center cursor-pointer group">
+                    <input
+                        type="radio"
+                        name="emotion"
+                        value="Felicidad"
+                        [(ngModel)]="sentiment"
+                        class="sr-only"
+                    />
                     <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="relative w-20 h-20 sm:w-24 sm:h-24 bg-yellow-300 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110"
                     >
-                        <input
-                            type="radio"
-                            name="emotion"
-                            value="Felicidad"
-                            class="absolute inset-0 opacity-0 cursor-pointer"
-                        />
-                        <img
-                            src="/src/assets/images/happiness.png"
-                            alt="Felicidad"
-                            class="w-8 h-8"
-                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center"
+                        >
+                            <div
+                                class="w-16 h-16 sm:w-20 sm:h-20 bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden"
+                            >
+                                <img
+                                    src="/images/happiness.png"
+                                    alt="Felicidad"
+                                    class="w-12 h-12 sm:w-16 sm:h-16 object-cover transform -translate-y-1 group-hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <span class="mt-2 text-gray-700">Felicidad</span>
-            </label>
-            <!-- Tristeza -->
-            <label class="flex flex-col items-center cursor-pointer">
-                <input
-                    type="radio"
-                    name="emotion"
-                    value="Tristeza"
-                    class="sr-only"
-                />
-                <div
-                    class="relative w-16 h-16 flex items-center justify-center bg-blue-200 rounded-full border-2 border-transparent group-hover:border-blue-400 transition"
-                >
+                    <span
+                        class="mt-2 sm:mt-3 text-sm sm:text-lg font-semibold text-yellow-600 group-hover:text-yellow-700"
+                        >Felicidad</span
+                    >
+                </label>
+
+                <label class="flex flex-col items-center cursor-pointer group">
+                    <input
+                        type="radio"
+                        name="emotion"
+                        value="Tristeza"
+                        [(ngModel)]="sentiment"
+                        class="sr-only"
+                    />
                     <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="relative w-20 h-20 sm:w-24 sm:h-24 bg-blue-300 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110"
                     >
-                        <input
-                            type="radio"
-                            name="emotion"
-                            value="Tristeza"
-                            class="absolute inset-0 opacity-0 cursor-pointer"
-                        />
-                        <img
-                            src="/src/assets/images/sadness.png"
-                            alt="Tristeza"
-                            class="w-8 h-8"
-                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center"
+                        >
+                            <div
+                                class="w-16 h-16 sm:w-20 sm:h-20 bg-blue-400 rounded-full flex items-center justify-center overflow-hidden"
+                            >
+                                <img
+                                    src="/images/sadness.png"
+                                    alt="Tristeza"
+                                    class="w-12 h-12 sm:w-16 sm:h-16 object-cover transform -translate-y-1 group-hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <span class="mt-2 text-gray-700">Tristeza</span>
-            </label>
-            <!-- Ansiedad -->
-            <label class="flex flex-col items-center cursor-pointer">
-                <input
-                    type="radio"
-                    name="emotion"
-                    value="Ansiedad"
-                    class="sr-only"
-                />
-                <div
-                    class="relative w-16 h-16 flex items-center justify-center bg-red-200 rounded-full border-2 border-transparent group-hover:border-red-400 transition"
-                >
+                    <span
+                        class="mt-2 sm:mt-3 text-sm sm:text-lg font-semibold text-blue-600 group-hover:text-blue-700"
+                        >Tristeza</span
+                    >
+                </label>
+
+                <label class="flex flex-col items-center cursor-pointer group">
+                    <input
+                        type="radio"
+                        name="emotion"
+                        value="Ansiedad"
+                        [(ngModel)]="sentiment"
+                        class="sr-only"
+                    />
                     <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="relative w-20 h-20 sm:w-24 sm:h-24 bg-red-300 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110"
                     >
-                        <input
-                            type="radio"
-                            name="emotion"
-                            value="Ansiedad"
-                            class="absolute inset-0 opacity-0 cursor-pointer"
-                        />
-                        <img
-                            src="/src/assets/images/anxiety.png"
-                            alt="Ansiedad"
-                            class="w-8 h-8"
-                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center"
+                        >
+                            <div
+                                class="w-16 h-16 sm:w-20 sm:h-20 bg-red-400 rounded-full flex items-center justify-center overflow-hidden"
+                            >
+                                <img
+                                    src="/images/anxiety.png"
+                                    alt="Ansiedad"
+                                    class="w-12 h-12 sm:w-16 sm:h-16 object-cover transform -translate-y-1 group-hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <span class="mt-2 text-gray-700">Ansiedad</span>
-            </label>
-        </div>
-    </form>
+                    <span
+                        class="mt-2 sm:mt-3 text-sm sm:text-lg font-semibold text-red-600 group-hover:text-red-700"
+                        >Ansiedad</span
+                    >
+                </label>
+            </div>
+            <button
+                type="submit"
+                class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:bg-indigo-700 transition duration-300"
+                [disabled]="!f.valid"
+            >
+                Enviar
+            </button>
+        </form>
+    </div>
 </div>
